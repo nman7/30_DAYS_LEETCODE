@@ -1,0 +1,25 @@
+ def sortColors(self, nums: List[int]) -> None:
+        r=0
+        w=0
+        b=0
+        red=0
+        white=1
+        blue=2
+        for i in nums:
+            if i==0:
+                r=r+1
+            elif i==1:
+                w=w+1
+            else:
+                b=b+1
+        for i in range(r+w+b):
+          if r>0:
+            nums[i]=red
+            r=r-1
+          elif w>0:
+            nums[i]=white
+            w=w-1
+          elif b>0:
+            nums[i]=blue
+            b=b-1
+        print(nums)
