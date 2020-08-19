@@ -1,0 +1,17 @@
+#USED FLOYD ALGORITHM FOR FOR DUPLICATE DETECTION
+
+#JOMA CLASSES (FLOYD ANIME)
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        s=f=nums[0]
+        while(1):
+            s = nums[s]
+            f = nums[nums[f]]
+            if s==f:
+                break
+        f=nums[0]
+        while(s!=f):
+            s = nums[s]
+            f = nums[f]
+        return(s)
