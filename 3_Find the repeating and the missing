@@ -1,0 +1,27 @@
+
+l = list(map(int,input().split()))
+m = max(l)
+h = {i: 0 for i in l} 
+print(h)
+rep=0
+miss=0
+flag1=0
+flag2=0
+sum=0
+for i in l:
+  h[i] += 1
+for i in range(1,max(l)+1):
+  try:
+    if h[i]>=2 and flag1==0:
+      flag1=1
+      rep=i
+  except:
+    if flag2==0:
+      flag2=1
+      miss=i
+print("REPEATING = {},MISSING = {}".format(rep,miss))
+
+
+
+#SPACE COMPLEXITY = O(n)
+#TIME COMPLEXITY = O(n)
