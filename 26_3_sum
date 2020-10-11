@@ -1,0 +1,28 @@
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        #nums = list(map(int,input().split()))
+        nums.sort()
+        matrix=[]
+        for i in range(len(nums)-2):
+          #below condition is for taking care of duplicate for "a"
+          if i>0 and nums[i]==nums[i-1]:
+            continue
+          a = i
+          b = i+1
+          c = len(nums)-1
+          while(b<c):
+            summation=nums[a]+nums[b]+nums[c]
+            if summation==0:
+              matrix.append([nums[a],nums[b],nums[c]])
+              while b<c and nums[b]==nums[b+1]:
+                b = b+1
+              while b<c and nums[c]==nums[c-1]:
+                c = c-1
+              b=b+1
+              c=c-1
+            elif summation>0:
+              c = c-1
+            elif summation<0:
+              b = b+1
+
+        return(matrix)
